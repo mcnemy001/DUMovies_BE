@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 
 // Port where the server will run
-const PORT = 5000;
+const port = process.env.PORT || 5000;
 
 // app routes
 app.use(authRoutes);
@@ -41,6 +41,6 @@ app.use('/movies/', similarRoutes);
 app.use('/api', preferencesRoutes); // atau bisa juga app.use(preferencesRoutes);
 
 // Start the server
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
