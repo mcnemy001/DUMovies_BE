@@ -23,3 +23,5 @@ async function testConnection() {
 }
 
 testConnection();
+
+module.exports = db;
